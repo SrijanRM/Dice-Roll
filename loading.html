@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <span class="loading">Loading...</span>
+    </div>
+
+
+    <div class="insidemain">
+        <div class="roll">Roll The Dice</div>
+        <div class="tbtn">
+            <div class="selected"><span>Selected</span></br><span class="zero" id="zero">0</span></div>
+            <div class="Timer"><img src="dice-6.png" alt="" width="4opx" class="dice">
+                <div class="t">&#8987;<div class="time"><span></span></div>
+                </div>
+            </div>
+            <div class="score"><span>Score</span></br><span class="zero1">0</span></div>
+        </div>
+        <div class="guess"><span>Result</span></div>
+        <div class="table">
+            <table>
+                <tr>
+                    <td><button class="bt bl bb">1</button></td>
+                    <td><button class="bt bb bbr bbl">2</button></td>
+                    <td><button class="br bt bb">3</button></td>
+                </tr>
+
+                <tr>
+                    <td><button class="bb bl">4</button></td>
+                    <td><button class="bb bb bbr bbl">5</button></td>
+                    <td><button class="br bb">6</button></td>
+                </tr>
+            </table>
+        </div>
+        <div class="newgame"> <button class="newbtn" onclick="callFun()">🔄 New game</button></div>
+    </div>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    * {
+        padding: 0%;
+        margin: 0%;
+    }
+
+    body {
+        background-color: #c7365f;
+    }
+
+    .container {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: black;
+        opacity: .2;
+    }
+
+    .loading {
+        background-color: black;
+        color: azure;
+        margin: auto;
+        font-size: 100px;
+        font-weight: 700;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    }
+
+    .insidemain {
+        margin-top: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 700px;
+        width: 800px;
+        color: black;
+        border-radius: 20px;
+        border-radius: 20px;
+        background-color: #d17790;
+    }
+
+    .roll {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 50px;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .tbtn {
+        display: flex;
+        margin-top: 30px;
+    }
+
+    .selected {
+        width: 150px;
+        height: 150px;
+        margin-left: 30px;
+        border-radius: 10px;
+        background-color: #753682;
+        text-align: center;
+        font-size: 40px;
+        box-shadow: 5px 5px 5px rgb(54, 56, 56);
+    }
+
+    .score {
+        width: 150px;
+        height: 150px;
+        margin-left: 105px;
+        border-radius: 10px;
+        background-color: #0f6793;
+        text-align: center;
+        font-size: 40px;
+        box-shadow: 5px 5px 5px rgb(54, 56, 56);
+    }
+
+    .Timer {
+        font-size: 30px;
+        margin-top: 70px;
+        margin-left: 160px;
+        margin-right: 35px;
+        display: flex;
+        height: 200px;
+        width: fit-content;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .time {
+        margin-left: 30px;
+        width: 60px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: #e6b2c1;
+        text-align: center;
+    }
+
+    .dice {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        display: none;
+    }
+
+    .t {
+        font-size: 30px;
+        margin-top: auto;
+        display: flex;
+    }
+
+    .guess {
+        margin-top: 20px;
+        text-align: center;
+        color: azure;
+        width: 200px;
+        height: 40px;
+        line-height: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #ebb5c4;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 20px;
+    }
+
+    .table {
+
+        margin-top: 30px;
+        width: fit-content;
+        height: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #c7365f;
+        border-radius: 10px;
+    }
+
+    button {
+        border-radius: 10px;
+        width: 190px;
+        height: 50px;
+        background-color: #d17790;
+        box-shadow: 5px 5px 5px rgb(54, 56, 56);
+        border: solid rgb(86, 80, 80);
+    }
+    .br {
+        margin-right: 30px;
+    }
+
+    .bt {
+        margin-top: 20px;
+    }
+
+    .bb {
+        margin-bottom: 20px;
+    }
+
+    .bl {
+        margin-left: 30px;
+    }
+
+    .bbl {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .newgame {
+        margin-top: 40px;
+        display: flex;
+    }
+
+    .newbtn {
+        margin-left: auto;
+        margin-right: auto;
+        background-color: aliceblue;
+        height: 40px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 0px rgb(54, 56, 56);
+        border: 0px;
+    }
+
+    .zero,
+    .zero1 {
+        font-size: 80px;
+    }
+</style>
+
+
+
+
+
+<script>
+    var con = document.querySelector('.container');
+    let img = document.querySelector('.dice');
+    var decision = document.querySelector('.guess');
+    var score = document.querySelector('.zero1');
+    var time = document.querySelector('.time');
+    var text = document.getElementById("zero");
+    var btn = document.querySelector('.table');
+    var newgame = document.querySelector('.newbtn');
+    let rand = 0;
+    let ptr = 0;
+    setTimeout(hideElement, 3000);
+    function hideElement() {
+        con.style.display = "none";
+    }
+
+    function diceselect() {
+        btn.addEventListener("click", (e) => {
+            while(ptr != 1){
+        if (e.target.localName == "button") {
+                text.innerText = e.target.innerText;
+                ptr=1;
+            }
+        }
+        });
+    }
+    function callFun() {
+        let val = 10;
+        ptr = 0;
+        newgame.disabled=true;
+        text.innerText = 0;
+        decision.innerText = "Result";
+        img.style.display = "none";
+        score.innerText = 0;
+        if (ptr == 0) {
+            diceselect();
+            for (let i = 0; i <= 10; i++) {
+                setTimeout(() => {
+                    val = 10 - i;
+                    time.innerText = val;
+                    if (val == 0) { callRandom(); setTimeout("checkwin()", 000); newgame.disabled=false;};
+                }, i * 1000);
+            }
+        }
+    }
+    function checkwin() {
+        if (text.innerText == rand) {
+            decision.innerText = "Your Guess Was Right";
+            score.innerText = rand;
+        }
+        else {
+            decision.innerText = "Your Guess Was Wrong";
+        }
+    }
+    function callRandom() {
+        rand = Math.floor(Math.random() * 6) + 1;
+        console.log(rand);
+        img.src = `dice-${rand}.png`;
+        img.style.display = "block";
+    }
+</script>
+
+</html>
